@@ -1,12 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type World struct {
-	Message string
-}
+	"github.com/numbers88s/simple-mock-go/pkg/hello"
+)
 
 func main() {
-	w := &World{Message: "Hello, World!"}
+	w := &hello.World{Message: "Hello, World!"}
 	fmt.Println(w.Message)
 }
