@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	w := &hello.World{Message: "Hello, World!"}
+	w := hello.New()
 	fmt.Println(w.Message)
 }
