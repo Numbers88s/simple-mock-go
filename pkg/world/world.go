@@ -1,4 +1,4 @@
-package hello
+package world
 
 type World struct {
 	Message string

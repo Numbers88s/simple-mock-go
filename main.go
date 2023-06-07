@@ -8,5 +8,5 @@ import (
 
 func main() {
 	w := hello.New()
-	fmt.Println(w.Message)
+	fmt.Println(w.Say())
 }
