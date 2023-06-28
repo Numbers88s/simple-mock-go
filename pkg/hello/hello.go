@@ -11,11 +11,11 @@ func New() *Hello {
 	return &Hello{World: m}
 }
 
-func (h *Hello) Say() (string, error) {
+func (h *Hello) Say() string {
 	say, err := h.World.Say()
 	if err != nil {
-		return "", err
+		return ""
 	}
 
-	return say, nil
+	return say
 }
