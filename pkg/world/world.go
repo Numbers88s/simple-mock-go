@@ -18,13 +18,10 @@ func New() *World {
 	return &World{Message: "Hello World!"}
 }
 
-func (w *World) Say() (string, ClassicError) {
-	var result ClassicError
-
+func (w *World) Say() (string, multierror.Error) {
 	if w.Message == "" {
-		result = multierror.Append(result, ErrMessageEmpty)
-		return "", result
+		return "", multierror.Error{}
 	}
 
-	return w.Message, nil
+	return w.Message, multierror.Error{}
 }
