@@ -27,10 +27,5 @@ func New() *World {
 }
 
 func (w *World) Say() (string, error) {
-	err := errwrap.Wrapf("world: %s", ErrMessageEmpty)
-	if w.Message == "" {
-		return "", err
-	}
-
-	return w.Message, nil
+	return errwrap.Wrapf("world: %s", nil).Error(), nil
 }
