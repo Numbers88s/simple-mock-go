@@ -26,10 +26,11 @@ func New() *World {
 	return &World{Message: "Hello World!"}
 }
 
-func (w *World) Say() (string, errwrap.Wrapper) {
+func (w *World) Say() (string, error) {
+	err := errwrap.Wrapf("world: %s", ErrMessageEmpty)
 	if w.Message == "" {
-		return "", &AppError{}
+		return "", err
 	}
 
-	return w.Message, &AppError{}
+	return w.Message, nil
 }
