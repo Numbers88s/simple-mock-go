@@ -19,3 +19,26 @@ func (h *Hello) Say() string {
 
 	return say
 }
+
+type FrobinateArgs struct {
+	After string
+	Limit *int
+}
+
+func Frobinate(args FrobinateArgs) {
+	limit := 100
+	if args.Limit != nil {
+		limit = *args.Limit
+	}
+
+	offset := decodeAfter(args.After) // just fake it
+
+	world.Printer(world.ToolArgs{
+		Limit:  limit,
+		Offset: offset,
+	})
+}
+
+func decodeAfter(after string) int {
+	return 0
+}
