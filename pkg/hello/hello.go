@@ -1,6 +1,9 @@
 package hello
 
-import "github.com/numbers88s/simple-mock-go/pkg/world"
+import (
+	"github.com/numbers88s/simple-mock-go/pkg/printer"
+	"github.com/numbers88s/simple-mock-go/pkg/world"
+)
 
 type Hello struct {
 	World *world.World
@@ -33,7 +36,7 @@ func Frobinate(args FrobinateArgs) {
 
 	offset := decodeAfter(args.After) // just fake it
 
-	world.Printer(world.ToolArgs{
+	printer.Printer(printer.ToolArgs{
 		Limit:  limit,
 		Offset: offset,
 	})
