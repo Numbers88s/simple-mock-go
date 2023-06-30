@@ -34,7 +34,7 @@ func Frobinate(args FrobinateArgs) {
 		limit = *args.Limit
 	}
 
-	offset := decodeAfter(args.After) // just fake it
+	offset := decodeAfter(args.After)
 
 	printer.Printer(printer.ToolArgs{
 		Limit:  limit,

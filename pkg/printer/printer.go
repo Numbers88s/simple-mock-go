@@ -10,5 +10,8 @@ type ToolArgs struct {
 }
 
 func Printer(args ToolArgs) {
-	fmt.Println(args.Limit, args.MethodName)
+	if args.MethodName == "" {
+		panic("error")
+	}
+	fmt.Println(args.Limit)
 }
